@@ -8,6 +8,7 @@ process PredictPPI {
     )
     accelerator 1
     containerOptions '-e NVIDIA_DRIVER_CAPABILITIES=compute,utility'
+    memory '60 GB'
 
     input:
     tuple path(interactions), path(embeddings), path(weights)
