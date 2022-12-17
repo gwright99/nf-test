@@ -7,7 +7,7 @@ process PredictPPI {
         mode: 'copy',
     )
     accelerator 1
-    containerOptions '-e NVIDIA_DRIVER_CAPABILITIES=compute,utility -e NVIDIA_VISIBLE_DEVICES=all'
+    containerOptions '-e NVIDIA_DRIVER_CAPABILITIES=compute,utility'
 
     input:
     tuple path(interactions), path(embeddings), path(weights)
