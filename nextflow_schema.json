@@ -5,19 +5,27 @@
     "description": "",
     "type": "object",
     "$defs": {
-        "test_group": {
-            "title": "Test Group",
+        "clustering options": {
+            "title": "Clustering options",
             "type": "object",
-            "description": "",
-            "default": "",
+            "description": "No description",
             "properties": {
+                "obs_cluster": {
+                    "type": "string",
+                    "description": "Prefix for the .obs keys under which to add the cluster labels",
+                    "help_text": "Type: `string`, multiple: `False`, default: `\"harmony_integration_leiden\"`. ",
+                    "default": "harmony_integration_leiden"
+                },
                 "leiden_resolution": {
                     "type": "array",
                     "items": {
                         "type": "number"
                     },
-                    "default": [1.0],
-                    "description": "Control the coarseness of the clustering"
+                    "description": "Control the coarseness of the clustering",
+                    "help_text": "Type: `double`, multiple: `True`, default: `[1.0]`. ",
+                    "default": [
+                        1.0
+                    ]
                 }
             }
         }
