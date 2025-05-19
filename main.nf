@@ -4,7 +4,7 @@ process Dummy {
     debug true
 
     script:
-    "echo 'Hello world!'"
+    "echo 'Hello world!' && sleep 2h"
 }
 
 workflow {
