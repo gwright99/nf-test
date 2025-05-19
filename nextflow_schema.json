@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/Rob Syme test template//nextflow_schema.json",
+    "title": "Rob Syme test template pipeline parameters",
+    "description": "",
+    "type": "object",
+    "$defs": {
+        "test_group": {
+            "title": "Test Group",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "leiden_resolution": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "default": [1.0],
+                    "description": "Control the coarseness of the clustering"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/$defs/test_group"
+        }
+    ]
+}
