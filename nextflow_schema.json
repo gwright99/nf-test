@@ -5,7 +5,7 @@
     "description": "",
     "type": "object",
     "$defs": {
-        "clustering options": {
+        "test_group": {
             "title": "Clustering options",
             "type": "object",
             "description": "No description",
