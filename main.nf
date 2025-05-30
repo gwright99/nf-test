@@ -8,7 +8,6 @@ process Dummy {
 
 workflow {
     Channel.of(1..params.processCount)
-    | combine(Channel.of(10,100))
-    | take(10)
+    | combine(Channel.of(params.layerSize.tokenize(',')).flatten())
     | Dummy
 }
