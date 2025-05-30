@@ -1,12 +1,12 @@
 nextflow.enable.dsl=2
 
 process Dummy {
-    debug true
-
-    script:
-    "echo 'Hello world!'"
+    container "robsyme/container-loading-100mb:${i}"
+    input: val(i)
+    script: "echo 'Hello world! ${i}'"
 }
 
 workflow {
-    Dummy()
+    Channel.of(1..params.processCount)
+    | Dummy
 }
