@@ -19,7 +19,7 @@ workflow {
 
     def indices2 = Channel.of(35..params.processCount)
     def sizes2 = Channel.of(params.layerSize.tokenize(',')).flatten()
-    def combined2 = indices.combine(sizes2)
+    def combined2 = indices2.combine(sizes2)
 
     combined | Dummy
     combined2 | Dummy2
