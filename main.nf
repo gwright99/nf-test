@@ -6,6 +6,12 @@ process Dummy {
     script: "echo 'Hello world! ${i}'"
 }
 
+process Dummy2 {
+    container { "robsyme/container-loading-${layerSize}mb:${i.toString().padLeft(3,'0')}" }
+    input: tuple val(i), val(layerSize)
+    script: "echo 'Hello world! ${i}'"
+}
+
 workflow {
     def indices = Channel.of(1..params.processCount)
     def sizes = Channel.of(params.layerSize.tokenize(',')).flatten()
@@ -16,5 +22,5 @@ workflow {
     def combined2 = indices.combine(sizes2)
 
     combined | Dummy
-    combined2 | Dummy
+    combined2 | Dummy2
 }
