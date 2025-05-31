@@ -1,7 +1,7 @@
 nextflow.enable.dsl=2
 
 process Dummy {
-    container { "robsyme/container-loading-${layerSize}mb:${i.toString().padLeft(3,'0')}" }
+    container { "robsyme/container-loading-100mb:${i.toString().padLeft(3,'0')}" }
     input: tuple val(i), val(layerSize)
     script: "echo 'Hello world! ${i}'"
 }
