@@ -7,7 +7,10 @@ process Dummy {
 }
 
 workflow {
-    Channel.of(1..params.processCount)
-    | combine(Channel.of(params.layerSize.tokenize(',')).flatten())
-    | Dummy
+    def indices = Channel.of(1..params.processCount)
+    def sizes = Channel.of(params.layerSize.tokenize(',')).flatten()
+    def combined = indices.combine(sizes)
+
+    combined | Dummy
+    combined | Dummy2
 }
