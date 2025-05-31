@@ -16,5 +16,5 @@ workflow {
     def combined2 = indices.combine(sizes2)
 
     combined | Dummy
-    combined2 | Dummy2
+    combined2 | Dummy
 }
